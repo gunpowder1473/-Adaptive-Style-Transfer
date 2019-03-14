@@ -19,8 +19,8 @@ class Encoder:
             #                         name='Edge_1', pad='VALID', relu='RELU')
             # result2 = net.convLayer(pre, 1, 3, strides=1, Norm=self.Norm, training=self.is_training,
             #                         name='Edge_2', pad='VALID', relu='RELU')
-            # result = net.convLayer(result1 + result2, 3, 3, strides=1, Norm='NOT', training=self.is_training,
-            #                        name='Edge_3', pad=self.Norm, relu=False)
+            # result = net.convLayer(result1 + result2, 3, 3, strides=1, Norm=self.Norm, training=self.is_training,
+            #                        name='Edge_3', pad='VALID', relu=False)
             # result = tf.sigmoid(result)
             if 'BATCH' in self.Norm:
                 result = net.batchNorm(image, self.is_training, 'first_Norm')
