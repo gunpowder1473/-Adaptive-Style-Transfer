@@ -99,19 +99,19 @@ Notice that I used `tf.app.flags` to control the options shown below, you need t
 
 I just tried the transfer between pictures and Picasso's painting.
 
-<img src="./result/IMG_2071.png" style="zoom:50%">
+<img src="./result/IMG_2071.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2075.png" style="zoom:50%">
+<img src="./result/IMG_2075.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2076.png" style="zoom:50%">
+<img src="./result/IMG_2076.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2072.png" style="zoom:50%">
+<img src="./result/IMG_2072.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2077.png" style="zoom:50%">
+<img src="./result/IMG_2077.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2074.png" style="zoom:50%">
+<img src="./result/IMG_2074.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2078.png" style="zoom:50%">
+<img src="./result/IMG_2078.jpg" style="zoom:50%">
 
-<img src="./result/IMG_2073.png" style="zoom:50%">
+<img src="./result/IMG_2073.jpg" style="zoom:50%">
 
