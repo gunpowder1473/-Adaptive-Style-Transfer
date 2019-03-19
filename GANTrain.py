@@ -47,9 +47,9 @@ files_content = getFiles(FLAGS.img_content, 'content')
 files_style = getFiles(FLAGS.img_style, 'style')
 
 def generateBatch(files, batch_shape):
+    batch = np.zeros(batch_shape, dtype=np.float32)
     while True:
         try:
-            batch = np.zeros(batch_shape, dtype=np.float32)
             choosed = random.sample(files, batch_shape[0])
             for i, s in enumerate(choosed):
                 batch[i] = augmentor(resizeTo(getImg(s), 800, 1800))
@@ -83,7 +83,7 @@ def train():
             opt2 = tf.train.AdamOptimizer(learning_rate)
 
         net = ArtGAN(FLAGS.batch_size, FLAGS.ngf, FLAGS.ndf, FLAGS.img_size, FLAGS.win_rate, FLAGS.Norm)
-        net.train(FLAGS.discr, FLAGS.img_size, FLAGS.feature)
+        net.train(FLAGS.discr, FLAGS.img, FLAGS.feature)
 
         var_list_1 = [var for var in tf.trainable_variables() if
                       'Encoder_Model' in var.name or 'Decoder_Model' in var.name]
