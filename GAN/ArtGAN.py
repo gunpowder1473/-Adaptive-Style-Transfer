@@ -74,7 +74,7 @@ class ArtGAN:
             self.D_Acc = (tf.add_n(self.content_Dacc) + tf.add_n(self.style_Dacc) + tf.add_n(
                 self.output_Dacc)) / 3. / float(len(self.content_pre))
             self.G_Loss = discr * tf.add_n(self.G_Loss)
-            self.G_Acc = discr * tf.add_n(self.G_Acc) / float(len(self.output_pre))
+            self.G_Acc = tf.add_n(self.G_Acc) / float(len(self.output_pre))
             self.img_Loss = img * self.imageLoss(transfered_output, transfered_input)
             self.feature_Loss = feature * self.featureLoss(self.output_feature, self.content_feature)
             self.T_Loss = self.G_Loss + self.img_Loss + self.feature_Loss
