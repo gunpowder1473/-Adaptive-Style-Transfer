@@ -9,7 +9,6 @@ class ArtGAN:
         self.img_size = img_size
         self.batch_size = batch_size
         self.win_rate = win_rate
-        self.discr_success = tf.Variable(initial_value=win_rate, dtype=tf.float32, trainable=False, name='win_rate')
         self.Encoder = GANNetwork.Encoder('Encoder_Model', ngf, Norm=Norm, is_training=is_training)
         self.Decoder = GANNetwork.Decoder('Decoder_Model', ngf, Norm=Norm, is_training=is_training)
         self.Disc = GANNetwork.Discriminator('Disc_Model', ndf, Norm=Norm, is_training=is_training)
@@ -79,9 +78,6 @@ class ArtGAN:
             self.feature_Loss = feature * self.featureLoss(self.output_feature, self.content_feature)
             self.T_Loss = self.G_Loss + self.img_Loss + self.feature_Loss
 
-        self.discr_success = tf.cond(tf.greater_equal(self.discr_success, self.win_rate),
-                                     lambda: self.discr_success * (1. - 0.05) + 0.05 * (1. - self.G_Acc),
-                                     lambda: self.discr_success * (1. - 0.05) + 0.05 * self.D_Acc)
 
     def test(self, batch_shape):
         self.content = tf.placeholder(dtype=tf.float32, shape=batch_shape,
