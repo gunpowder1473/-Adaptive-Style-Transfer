@@ -217,7 +217,7 @@ def train():
                     output['T_Loss'],
                     output['D_Acc'],
                     output['G_Acc'],
-                    output['discr_success'],
+                    discr_success,
                     time.time() - start,
                     string)
             )
