@@ -5,7 +5,7 @@ from tensorflow.contrib import slim
 
 
 class ArtGAN:
-    def __init__(self, batch_size, ngf=32, ndf=64, img_size=128, win_rate=0.8, Norm='INSTANCE', is_training=True):
+    def __init__(self, batch_size, ngf=32, ndf=64, img_size=128, Norm='INSTANCE', is_training=True):
         self.img_size = img_size
         self.batch_size = batch_size
         self.win_rate = win_rate
