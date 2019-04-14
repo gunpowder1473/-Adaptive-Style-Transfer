@@ -82,7 +82,7 @@ def train():
             opt1 = tf.train.AdamOptimizer(learning_rate)
             opt2 = tf.train.AdamOptimizer(learning_rate)
 
-        net = ArtGAN(FLAGS.batch_size, FLAGS.ngf, FLAGS.ndf, FLAGS.img_size, FLAGS.win_rate, FLAGS.Norm)
+        net = ArtGAN(FLAGS.batch_size, FLAGS.ngf, FLAGS.ndf, FLAGS.img_size, FLAGS.Norm)
         net.train(FLAGS.discr, FLAGS.img, FLAGS.feature)
 
         var_list_1 = [var for var in tf.trainable_variables() if
