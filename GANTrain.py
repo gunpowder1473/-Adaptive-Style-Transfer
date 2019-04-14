@@ -163,7 +163,7 @@ def train():
                         {'global_step': global_step, 'learning_rate': learning_rate, 'train_op': train_op,
                          'output': net.output, 'D_Acc': net.D_Acc, 'G_Acc': net.G_Acc, 'summary': summary_op,
                          'D_Loss': net.D_Loss, 'G_Loss': net.G_Loss, 'img_Loss': net.img_Loss,
-                         'discr_success': net.discr_success, 'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
+                         'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
                         feed_dict={net.content: content_batch, net.style: style_batch})
                     string = 'Train together'
                 elif discr_success >= FLAGS.win_rate:
@@ -171,7 +171,7 @@ def train():
                         {'global_step': global_step, 'learning_rate': learning_rate, 'train_op': train_op_1,
                          'output': net.output, 'D_Acc': net.D_Acc, 'G_Acc': net.G_Acc, 'summary': summary_op,
                          'D_Loss': net.D_Loss, 'G_Loss': net.G_Loss, 'img_Loss': net.img_Loss,
-                         'discr_success': net.discr_success, 'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
+                         'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
                         feed_dict={net.content: content_batch, net.style: style_batch})
                     string = 'Train G'
                     discr_success = discr_success * (1. - 0.05) + 0.05 * (1 - output['G_Acc'])
@@ -180,7 +180,7 @@ def train():
                         {'global_step': global_step, 'learning_rate': learning_rate, 'train_op': train_op_2,
                          'output': net.output, 'D_Acc': net.D_Acc, 'G_Acc': net.G_Acc, 'summary': summary_op,
                          'D_Loss': net.D_Loss, 'G_Loss': net.G_Loss, 'img_Loss': net.img_Loss,
-                         'discr_success': net.discr_success, 'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
+                         'feature_Loss': net.feature_Loss, 'T_Loss': net.T_Loss},
                         feed_dict={net.content: content_batch, net.style: style_batch})
                     string = 'Train D'
                     discr_success = discr_success * (1. - 0.05) + 0.05 * output['D_Acc']
