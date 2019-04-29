@@ -8,7 +8,6 @@ class ArtGAN:
     def __init__(self, batch_size, ngf=32, ndf=64, img_size=128, Norm='INSTANCE', is_training=True):
         self.img_size = img_size
         self.batch_size = batch_size
-        self.win_rate = win_rate
         self.Encoder = GANNetwork.Encoder('Encoder_Model', ngf, Norm=Norm, is_training=is_training)
         self.Decoder = GANNetwork.Decoder('Decoder_Model', ngf, Norm=Norm, is_training=is_training)
         self.Disc = GANNetwork.Discriminator('Disc_Model', ndf, Norm=Norm, is_training=is_training)
