@@ -156,8 +156,7 @@ def train():
         while True:
             try:
                 start = time.time()
-                content_batch = sess.run(content_batch_op)
-                style_batch = sess.run(style_batch_op)
+                content_batch, style_batch = sess.run([content_batch_op, style_batch_op])
                 if iteration <= FLAGS.together_step:
                     output = sess.run(
                         {'global_step': global_step, 'learning_rate': learning_rate, 'train_op': train_op,
